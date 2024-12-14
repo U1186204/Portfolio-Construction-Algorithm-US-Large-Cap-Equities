@@ -1,47 +1,34 @@
-# Portfolio Optimization - IDS 789 Final Project
-Adil Gazder, Chris Moreira, Danish Maknojia, Vishesh Gupta
+# Portfolio Construction Algorithm for US Large-Cap Equities
+**Authors**: _Adil Gazder, Chris Moreira, Danish Maknojia, Vishesh Gupta_
+**Date**: December 11, 2024
+**Affiliation**: Duke University - Fundamentals of Finance Business Models
 
-## Overview
+## Abstract
 
-This project focuses on developing an investment portfolio optimization algorithm that iteratively selects stocks with the goal of maximizing Total Shareholder Return (TSR), optimizing volatility through equity beta, and determining stock allocations based on the equity ratings of each security analyzed. The final portfolio consists of 80 large-cap equities representing 8 distinct industries. Designed to maintain volatility lower than that of the S&P 500, the portfolio also incorporates algorithmic constraints to cap individual stock and industry weightings, thereby preserving diversification.
+This project introduces a portfolio construction algorithm tailored for US large-cap equities, designed to optimize Total Shareholder Return (TSR), manage volatility through equity beta, and allocate assets based on equity ratings. The resulting portfolio is diversified across 80 stocks from 8 distinct industries, ensuring low volatility and alignment with investor risk preferences. By integrating advanced quantitative methods, the algorithm delivers a portfolio with lower beta than the S&P 500 while adhering to stringent diversification constraints. Algorithmic portfolio management addresses inefficiencies in traditional asset allocation methods by leveraging data-driven processes. Inspired by sector-specific ETFs managed by leading asset managers, this project demonstrates how algorithmic systems can dynamically respond to market conditions while assuring diversification and performance. Algorithmic Science ultimately helps asset managers rebalance, automate, and seamlessly contruct equity porfolios. 
 
-## Initial Algorithm Steps
+## Objective Functions
+- Maximize Total Shareholder Return (TSR): Combining capital gains and dividend yield to comprehensively evaluate performance.
+- Minimize Portfolio Volatility: Maintain an overall beta below 1.0 to ensure stability.
+- Enhance Diversification: Apply constraints to industry and individual stock weightings to mitigate concentration risks.
+- Optimize Allocation: Allocate weights using equity ratings derived from a combination of financial ratios and analyst assessments.
 
-1. **Normalize TSR**
-   - TSR values are normalized to ensure consistent scoring across iterations.
-   - The normalization process highlights cases where TSR becomes the primary factor over grading.
+## Key Variables
+- Total Shareholder Return (TSR): A holistic performance metric accounting for both price appreciation and dividend yield, capturing the value delivered to shareholders.
+- Equity Beta: A measure of stock volatility relative to the market, essential for constructing a portfolio with controlled risk.
+- Equity Ratings (A to F): A comprehensive grading system evaluating financial metrics such as cash flow, debt ratios, and P/E multiples.
 
-2. **Calculate Weights Across Investments**
-   - Obtain a weight for each investment by calculating a ratio such that values fall between 0 and 1.
-   - Perform basic normalization to standardize weights.
+# Algorithm 
+In the data preparation phase, TSR values were normalized across industries to ensure proportional representation. This normalization process adjusted each company's TSR so that its value reflected its relative contribution within its respective sector. Following normalization, a scoring mechanism was implemented, combining weighted grades and the normalized TSR values into a "Grade Score." The formula used for this computation was:
+```scss
+Grade Score = ((1 - y) * TSR) + (y * Grade Weight)
+```
+Here, the parameter y was assigned a value between 0.65 and 0.8, introducing controlled variability to ensure that the Grade Weight had a predominant influence in the final calculation while allowing for diversity in scoring outcomes.
+Several constraints were integrated into the algorithm to maintain portfolio robustness. Industry allocations were capped at a maximum of 16% to prevent over-concentration, while individual stock weights were restricted to a maximum of 4.5% to minimize idiosyncratic risks. Additionally, the portfolio beta was constrained to remain below 1.0 to ensure stability and mitigate excessive market volatility.
+The iterative process involved multiple steps to derive the optimal portfolio configuration. Initially, random weight generation introduced variability in weight calculations for each iteration. Grade scores were then calculated by combining TSR and Grade Weight to determine individual stock contributions. Subsequently, the weights were normalized to comply with the predefined industry and stock allocation constraints. The portfolio beta was computed as the weighted average of the individual stock betas to evaluate the portfolio's overall sensitivity to market movements. Finally, the algorithm selected the portfolio configuration with the lowest beta that satisfied all constraints, marking it as the optimal solution.
 
-3. **Focus on Industry Allocation**
-   - Evaluate the current weight allocated to each industry.
-   - Ensure compliance with the default allocation threshold of 16% per industry.
+# Results
+The algorithm achieved a portfolio beta of 0.89, representing a ~5% reduction compared to the S&P 500, while maintaining diversification. Over a 30-day evaluation period, the portfolio delivered a return of 10.08%, significantly outperforming both the S&P 500, which returned 5.98%, and all sectoral indices under consideration. The portfolio's diversification was evident in its balanced allocation across eight industries, with weights ranging from 9% for Real Estate to 15% for Finance and Technology. This project demonstrates the transformative potential of quantitative algorithms in constructing resilient, high-performing investment portfolios. By combining fundamental analysis with advanced optimization techniques, the algorithm delivers superior returns while maintaining stringent risk controls. The findings underscore the critical role of algorithmic portfolio management in modern finance and its capability to outperform benchmarks through innovative and disciplined approaches.
 
-4. **Calculate Portfolio Beta**
-   - Determine the portfolio’s overall beta value.
-   - Adjust weights to maintain a portfolio beta below 1.
 
-## Issues Identified
-
-1. **Random Weight Selection**
-   - We are currently selecting weights that meet constraints but do not optimize for the lowest beta value. This may lead to suboptimal portfolio performance.
-
-2. **Excessive Stock Weights**
-   - Some stocks occupy more than 7% of the portfolio, exceeding acceptable limits. This requires further restrictions to ensure diversification.
-
-3. **Industry Allocation Threshold Exceeded**
-   - Weight rebalancing occasionally exceeds the 16% threshold for individual industries, violating the allocation constraints. Adjustments are necessary to maintain compliance.
-
-## Updated Algorithm
-- 15,000 iterations to generate portfolios and select the one with the lowest beta and highest returns
-- Stock Weightage cap (<=4.5% of total portfolio) implemented
-- Sector Weightage cap (<=16% of total portfolio) implemented
-
-## Results
-
-We compared the performance of the portfolio to the SPY over the YTD 2024 time period and saw that our portfolio (44% overall returns) out-performed the SPY (26% overall returns) with a mean monthly return (calculated MoM) as 4% and a standard deviation of 4.6%
-
-![](YTDportperformance.png)
 
