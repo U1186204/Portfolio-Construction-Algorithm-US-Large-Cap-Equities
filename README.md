@@ -16,6 +16,7 @@ This project introduces a portfolio construction algorithm tailored for US large
 - Minimize Portfolio Volatility: Maintain an overall beta below 1.0 to ensure stability.
 - Enhance Diversification: Apply constraints to industry and individual stock weightings to mitigate concentration risks.
 - Optimize Allocation: Allocate weights using equity ratings derived from a combination of financial ratios and analyst assessments.
+![image](https://github.com/user-attachments/assets/7b87679a-3f76-4a5e-b4cb-91043132ed5e)
 
 ## Key Variables
 - Total Shareholder Return (TSR): A holistic performance metric accounting for both price appreciation and dividend yield, capturing the value delivered to shareholders.
@@ -33,6 +34,11 @@ The iterative process involved multiple steps to derive the optimal portfolio co
 
 # Results
 The algorithm achieved a portfolio beta of 0.89, representing a ~5% reduction compared to the S&P 500, while maintaining diversification. Over a 30-day evaluation period, the portfolio delivered a return of 10.08%, significantly outperforming both the S&P 500, which returned 5.98%, and all sectoral indices under consideration. The portfolio's diversification was evident in its balanced allocation across eight industries, with weights ranging from 9% for Real Estate to 15% for Finance and Technology. This project demonstrates the transformative potential of quantitative algorithms in constructing resilient, high-performing investment portfolios. By combining fundamental analysis with advanced optimization techniques, the algorithm delivers superior returns while maintaining stringent risk controls. The findings underscore the critical role of algorithmic portfolio management in modern finance and its capability to outperform benchmarks through innovative and disciplined approaches.
+![image](https://github.com/user-attachments/assets/18d2bd3a-8554-48c4-9b76-5b74c5b208c1)
+![image](https://github.com/user-attachments/assets/cbe15648-4c28-4568-9f33-ffb1950c2f18)
 
+# Diversification Constraints Appendix
+![image](https://github.com/user-attachments/assets/18d2bd3a-8554-48c4-9b76-5b74c5b208c1)
+![image](https://github.com/user-attachments/assets/cbe15648-4c28-4568-9f33-ffb1950c2f18)
 
 
