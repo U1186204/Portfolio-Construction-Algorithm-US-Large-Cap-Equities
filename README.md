@@ -38,7 +38,6 @@ The algorithm achieved a portfolio beta of 0.89, representing a ~5% reduction co
 ![image](https://github.com/user-attachments/assets/cbe15648-4c28-4568-9f33-ffb1950c2f18)
 
 # Diversification Constraints Appendix
-![image](https://github.com/user-attachments/assets/18d2bd3a-8554-48c4-9b76-5b74c5b208c1)
-![image](https://github.com/user-attachments/assets/cbe15648-4c28-4568-9f33-ffb1950c2f18)
-
+![image](https://github.com/user-attachments/assets/40e61869-f34f-4d4f-a9a6-b00b202ec942)
+![image](https://github.com/user-attachments/assets/1e072ba9-0678-4a35-b2be-a5fd7e753abe)
 
