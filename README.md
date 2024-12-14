@@ -1,6 +1,10 @@
 # Portfolio Construction Algorithm for US Large-Cap Equities
 **Authors**: _Adil Gazder, Chris Moreira, Danish Maknojia, Vishesh Gupta_
+
+
 **Date**: December 11, 2024
+
+
 **Affiliation**: Duke University - Fundamentals of Finance Business Models
 
 ## Abstract
