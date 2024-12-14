@@ -11,6 +11,9 @@
 
 This project introduces a portfolio construction algorithm tailored for US large-cap equities, designed to optimize Total Shareholder Return (TSR), manage volatility through equity beta, and allocate assets based on equity ratings. The resulting portfolio is diversified across 80 stocks from 8 distinct industries, ensuring low volatility and alignment with investor risk preferences. By integrating advanced quantitative methods, the algorithm delivers a portfolio with lower beta than the S&P 500 while adhering to stringent diversification constraints. Algorithmic portfolio management addresses inefficiencies in traditional asset allocation methods by leveraging data-driven processes. Inspired by sector-specific ETFs managed by leading asset managers, this project demonstrates how algorithmic systems can dynamically respond to market conditions while assuring diversification and performance. Algorithmic Science ultimately helps asset managers rebalance, automate, and seamlessly contruct equity porfolios. 
 
+# Project Schema
+![image](https://github.com/user-attachments/assets/6289519d-1e12-41cc-bc04-1e5f43363c3e)
+ 
 ## Objective Functions
 - Maximize Total Shareholder Return (TSR): Combining capital gains and dividend yield to comprehensively evaluate performance.
 - Minimize Portfolio Volatility: Maintain an overall beta below 1.0 to ensure stability.
